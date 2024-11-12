@@ -19,6 +19,6 @@ export const appConfig: ApplicationConfig = {
       provideStorage(() => getStorage()),
       provideMessaging(() => getMessaging())
     ),
-    provideRouter(routes)
+    provideRouter(routes), importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"go4lunch-8d458","appId":"1:837308858740:web:b8178a1478cfb82771ec21","databaseURL":"https://go4lunch-8d458.firebaseio.com","storageBucket":"go4lunch-8d458.firebasestorage.app","apiKey":"AIzaSyBxJJVyIndVvr_cWY8ctTQ2DNOhOy94fY0","authDomain":"go4lunch-8d458.firebaseapp.com","messagingSenderId":"837308858740","measurementId":"G-BCPKPWRLVE"}))), importProvidersFrom(provideAuth(() => getAuth())), importProvidersFrom(provideFirestore(() => getFirestore())), importProvidersFrom(provideMessaging(() => getMessaging())), importProvidersFrom(provideStorage(() => getStorage()))
   ],
 };

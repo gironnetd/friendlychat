@@ -72,7 +72,14 @@
  async function signIn() {
    // Sign in Firebase using popup auth and Google as the identity provider.
    var provider = new GoogleAuthProvider();
-   await signInWithPopup(getAuth(), provider);
+   await signInWithPopup(getAuth().config, provider);
+   // const provider = new FacebookAuthProvider();
+   const result = await signInWithPopup(auth, provider);
+   // The signed-in user info.
+   const user = result. user;
+   // This gives you a Facebook Access Token.
+   const credential = provider.credentialFromResult(auth, result);
+   const token = credential.accessToken;
  }
  
  // Signs-out of Friendly Chat.
